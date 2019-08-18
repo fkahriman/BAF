@@ -1,0 +1,18 @@
+Package: BAFR
+Type: Package
+Title: Bitki Islahi Analiz Paketi
+Version: 0.1.0
+Author: Dr. Fatih Kahrıman
+Maintainer: BAF Elektronik Yazılım Tarım <info@baf-eyt.com.tr>
+Description: Bitki ıslahı çalışmalarından elde edilen verilerin analizi için Türkçe analiz programı.
+Depends: shiny, devtools, DiallelAnalysisR,
+    agricolae,
+    ggplot2
+Imports:
+    shiny, DiallelAnalysisR,
+    agricolae,
+    ggplot2
+License: MIT
+Encoding: UTF-8
+LazyData: true
+RoxygenNote: 6.1.1
