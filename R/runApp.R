@@ -8,6 +8,6 @@
 #' \dontrun{runBAFR()}
 #' @export
 runBAFR <- function() {
-  fl <- system.file("shiynyapp/app.R", package = "BAFR")
+  fl <- system.file("shinyapp/app.R", package = "BAFR")
   shiny::runApp(fl)
 }
