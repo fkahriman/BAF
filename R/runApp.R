@@ -1,9 +1,13 @@
+#' Run ShinyApp
+#'
+#' Launches the shiny app GUI interface to sedproxy
+#'
+#' @export
+#'
+#' @examples
+#' \dontrun{runBAFR()}
 #' @export
 runBAFR <- function() {
-  appDir <- system.file("shiny-app", package = "BAFR")
-  if (appDir == "") {
-    stop("Could not find example directory. Try re-installing `BAFR`.", call. = FALSE)
-  }
-
-  shiny::runApp(appDir, display.mode = "normal")
+  fl <- system.file("shiynyapp/app.R", package = "BAFR")
+  shiny::runApp(fl)
 }
