@@ -8,7 +8,8 @@
 #
 
 library(shiny)
-library(BAFR)
+require(BAFR)
+devtools::install_github("fkahriman/BAFR")
 
 ## Veri Giriş Modülü----------------------------------------------------------------
 csvFileInput <- function(id, label = "CSV file") {
