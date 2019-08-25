@@ -8,6 +8,7 @@
 #
 
 library(shiny)
+library(BAFR)
 
 ## Veri Giriş Modülü----------------------------------------------------------------
 csvFileInput <- function(id, label = "CSV file") {
