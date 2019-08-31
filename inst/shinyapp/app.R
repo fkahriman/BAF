@@ -8,7 +8,7 @@
 #
 
 library(shiny)
-if (!require(BAFR)) runGitHub("fkahriman/BAFR", subdir = "inst/shinyapp/"); library(BAFR)
+if (!require(BAFR)) devtools::install_github("fkahriman/BAFR"); library(BAFR)
 
 ## Veri Giriş Modülü----------------------------------------------------------------
 csvFileInput <- function(id, label = "CSV file") {
