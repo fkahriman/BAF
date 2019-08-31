@@ -8,7 +8,7 @@
 #
 
 library(shiny)
-library(BAFR)
+if (!require(BAFR)) install.packages("fkahriman", repos = BAF); library(BAFR)
 
 ## Veri Giriş Modülü----------------------------------------------------------------
 csvFileInput <- function(id, label = "CSV file") {
