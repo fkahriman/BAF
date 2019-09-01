@@ -25,7 +25,7 @@
 #'
 LinexTest <- function(data) {
   require(plantbreeding)
-  LinexTest <- plantbreeding:: line.tester(dataframe = file1, yvar = "trait1",  genotypes = "genotypes",
+  LinexTest <- plantbreeding::line.tester(dataframe = file1, yvar = "trait1",  genotypes = "genotypes",
                                            replication = "replication",  Lines = "Lines", Testers = "Tester", gclass = "gclass" )
   return(LinexTest)
 }

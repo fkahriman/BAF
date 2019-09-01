@@ -10,7 +10,7 @@
 library(shiny)
 library(BAFR)
 
-## Veri Giriş Modülü----------------------------------------------------------------
+## Veri Giris Modulu----------------------------------------------------------------
 csvFileInput <- function(id, label = "CSV file") {
   # Create a namespace function using the provided id
   ns <- NS(id)
@@ -53,7 +53,7 @@ csvFile <- function(input, output, session, stringsAsFactors) {
   return(dataframe)
 }
 
-## Veri Giriş Modülü----------------------------------------------------------------
+## Veri Giris Modulu----------------------------------------------------------------
 
 # BAFR App
 ui <- fluidPage(    # Application title
