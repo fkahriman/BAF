@@ -1,0 +1,12 @@
+name: shinyapp
+title: shinyapp
+username:
+account: bafr
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 1112300
+bundleId: 2353533
+url: https://bafr.shinyapps.io/shinyapp/
+when: 1566742658.09319
+asMultiple: FALSE
+asStatic: FALSE

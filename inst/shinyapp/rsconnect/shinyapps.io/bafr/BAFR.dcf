@@ -1,0 +1,12 @@
+name: BAFR
+title: BAFR
+username:
+account: bafr
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 1088943
+bundleId: 2374903
+url: https://bafr.shinyapps.io/BAFR/
+when: 1567330507.49598
+asMultiple: FALSE
+asStatic: FALSE

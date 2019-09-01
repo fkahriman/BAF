@@ -9,13 +9,17 @@ LinexTest(data)
 \arguments{
 \item{data}{A \code{data.frame}}
 
-\item{replications}{Replications as factor}
+\item{replication}{Replication as factor}
 
-\item{lines}{lines  as factor}
+\item{Lines}{lines  as factor}
 
-\item{testers}{testers  as factor}
+\item{Testers}{testers  as factor}
 
-\item{y}{y  as variable}
+\item{genotypes}{genotypes  as factor}
+
+\item{gclass}{gclass  as factor}
+
+\item{yvar}{y  as variable}
 }
 \description{
 Bu paket ıslah denemelerinin analizi için geliştirilmiştir.

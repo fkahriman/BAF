@@ -6,10 +6,11 @@ Author: Dr. Fatih Kahrıman
 Maintainer: BAF Elektronik Yazılım Tarım <info@baf-eyt.com.tr>
 Description: Bitki ıslahı çalışmalarından elde edilen verilerin analizi için Türkçe analiz programı.
 Depends: shiny, devtools, DiallelAnalysisR,
-    agricolae, plantbreeding
+    agricolae
 Imports:
     shiny, DiallelAnalysisR,
-    agricolae, plantbreeding
+    agricolae
+Remotes:plantbreeding
 License: MIT
 Encoding: UTF-8
 LazyData: true

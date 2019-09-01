@@ -69,8 +69,8 @@ ui <- fluidPage(    # Application title
                       sidebarLayout(
                         sidebarPanel(
                           h2("İndirme"),
-                          p("BAFR paketi CRAN serveri üzerinden indirilebilir bir pakete sahiptir:"),
-                          code('install.packages("BAFR")'),
+                          p("BAFR uygulaması GitHub serveri üzerinden indirilebilir bir pakete sahiptir:"),
+                          code('devtools::install_packages("fkahriman/BAFR")'),
                           br(),
                           br(),
                           br(),
