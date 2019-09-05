@@ -8,8 +8,8 @@
 #
 
 library(shiny)
-(devtools::install_github("fkahriman/BAFR"));
-library(BAFR)
+require(BAFR)
+devtools::install_github("fkahriman/BAFR")
 
 ## Veri Giris Modulu----------------------------------------------------------------
 csvFileInput <- function(id, label = "CSV file") {
