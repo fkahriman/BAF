@@ -8,6 +8,7 @@
 #
 
 library(shiny)
+(devtools::install_github("fkahriman/BAFR"));
 library(BAFR)
 
 ## Veri Giris Modulu----------------------------------------------------------------
@@ -70,7 +71,7 @@ ui <- fluidPage(    # Application title
                         sidebarPanel(
                           h2("İndirme"),
                           p("BAFR uygulaması GitHub serveri üzerinden indirilebilir bir pakete sahiptir:"),
-                          code('devtools::install_packages("fkahriman/BAFR")'),
+                          code('devtools::install_github("fkahriman/BAFR")'),
                           br(),
                           br(),
                           br(),
