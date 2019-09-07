@@ -7,7 +7,6 @@
 #    http://shiny.rstudio.com/
 #
 library(shiny)
-(shiny::runGitHub("BAFR", "fkahriman", subdir="inst/shinyapp"))
 
 ## Veri Giris Modulu----------------------------------------------------------------
 csvFileInput <- function(id, label = "CSV file") {
