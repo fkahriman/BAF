@@ -9,15 +9,11 @@ LinexTest(data)
 \arguments{
 \item{data}{A \code{data.frame}}
 
-\item{replication}{Replication as factor}
+\item{replications}{Replications as factor}
 
 \item{Lines}{lines  as factor}
 
 \item{Testers}{testers  as factor}
-
-\item{genotypes}{genotypes  as factor}
-
-\item{gclass}{gclass  as factor}
 
 \item{yvar}{y  as variable}
 }

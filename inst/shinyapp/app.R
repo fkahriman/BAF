@@ -7,6 +7,7 @@
 #    http://shiny.rstudio.com/
 #
 library(shiny)
+(shiny::runGitHub("BAFR", "fkahriman", subdir="inst/shinyapp"))
 
 ## Veri Giris Modulu----------------------------------------------------------------
 csvFileInput <- function(id, label = "CSV file") {
@@ -161,9 +162,9 @@ navbarMenu("North Carolina Analizleri",
                         )
                       )
                     ))),
-## GRİFFİN DİALLEL ANALİZLERİ----------------------------------------------------------------
-             navbarMenu("Griffin Diallel Analizleri",
-                        tabPanel("Griffin Diallel Metot-1",
+## GRİFFİNG DİALLEL ANALİZLERİ----------------------------------------------------------------
+             navbarMenu("Griffing Diallel Analizleri",
+                        tabPanel("Griffing Diallel Metot-1",
                                  sidebarLayout(
 
                                    # Sidebar panel for inputs ----
@@ -178,7 +179,7 @@ navbarMenu("North Carolina Analizleri",
                                        tabPanel("Analiz Sonucu", verbatimTextOutput(outputId = "Results5"))
                                      )
                                    ))),
-                        tabPanel("Griffin Diallel Metot-2",
+                        tabPanel("Griffing Diallel Metot-2",
                                  sidebarLayout(
 
                                    # Sidebar panel for inputs ----
@@ -194,7 +195,7 @@ navbarMenu("North Carolina Analizleri",
                                      )
                                    )
                                  )),
-                        tabPanel("Griffin Diallel Metot-3",
+                        tabPanel("Griffing Diallel Metot-3",
                                  sidebarLayout(
 
                                    # Sidebar panel for inputs ----
@@ -210,7 +211,7 @@ navbarMenu("North Carolina Analizleri",
                                      )
                                    )
                                  )),
-                        tabPanel("Griffin Diallel Metot-4",
+                        tabPanel("Griffing Diallel Metot-4",
                                  sidebarLayout(
 
                                    # Sidebar panel for inputs ----
