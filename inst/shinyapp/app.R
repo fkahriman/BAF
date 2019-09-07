@@ -315,7 +315,7 @@ server <- function(input, output,session) {
     })
 
     op1 <- eventReactive(input$btn1, {
-      BAFR::LinexTest(file1)
+      LinexTest(file1)
     })
 
     output$Results1 <- renderPrint({
