@@ -4,7 +4,7 @@ Title: Bitki Islahi Analiz Paketi
 Version: 0.1
 Author: Dr. Fatih Kahriman
 Maintainer: BAF Elektronik Yazilim Tarim <info@baf-eyt.com.tr>
-Description: Bitki islahi ?alismalarindan elde edilen verilerin analizi icinn Turkce analiz programi.
+Description: Bitki islahi Calismalarindan elde edilen verilerin analizi icinn Turkce analiz programi.
 Depends: shiny, devtools
 Imports:
     shiny, DiallelAnalysisR,
