@@ -23,7 +23,7 @@
 #'
 LinexTest <- function(data) {
   require(agricolae)
-  LinexTest <- agricolae::lineXtester(replications, lines, testers, y)
+  LinexTest <- with(data, agricolae::lineXtester(replications, lines, testers, y))
   return(LinexTest)
 }
 
