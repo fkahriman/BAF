@@ -5,8 +5,8 @@ account: bafr
 server: shinyapps.io
 hostUrl: https://api.shinyapps.io/v1
 appId: 1088943
-bundleId: 2394921
+bundleId: 2415006
 url: https://bafr.shinyapps.io/BAFR/
-when: 1567877281.28482
+when: 1568550044.51787
 asMultiple: FALSE
 asStatic: FALSE
