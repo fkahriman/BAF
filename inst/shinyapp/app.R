@@ -7,8 +7,8 @@
 #    http://shiny.rstudio.com/
 #
 library(shiny)
-require(devtools)
-devtools::install_github("fkahriman/BAFR", repos = "http://github.com")
+library(devtools)
+if (!require(BAFR)) devtools::install_github("fkahriman/BAFR", repos = "http://github.com", force = T)
 library(BAFR)
 
 ## Veri Giris Modulu----------------------------------------------------------------
