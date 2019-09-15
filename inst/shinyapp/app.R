@@ -7,8 +7,6 @@
 #    http://shiny.rstudio.com/
 #
 library(shiny)
-library(devtools)
-install_github("fkahriman/BAFR", repos = "http://github.com", force = T)
 
 ## Veri Giris Modulu----------------------------------------------------------------
 csvFileInput <- function(id, label = "CSV file") {
@@ -318,7 +316,7 @@ server <- function(input, output,session) {
 
     op1 <- eventReactive(input$btn1, {
       LinexTest(file1)
-    })
+      })
 
     output$Results1 <- renderPrint({
       op1()
