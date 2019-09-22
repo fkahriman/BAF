@@ -7,6 +7,7 @@
 #    http://shiny.rstudio.com/
 #
 library(shiny)
+library(BAFR)
 
 ## Veri Giris Modulu----------------------------------------------------------------
 csvFileInput <- function(id, label = "CSV file") {
@@ -15,11 +16,11 @@ csvFileInput <- function(id, label = "CSV file") {
 
   tagList(
     fileInput(ns("file"), label),
-    checkboxInput(ns("heading"), "Has heading"),
-    selectInput(ns("quote"), "Quote", c(
-      "None" = "",
-      "Double quote" = "\"",
-      "Single quote" = "'"
+    checkboxInput(ns("heading"), "Baslik Var"),
+    selectInput(ns("quote"), "İsim Belirteci", c(
+      "Yok" = "",
+      "Cift Tirnak" = "\"",
+      "Tek Tirnak" = "'"
     ))
   )
 }
@@ -43,7 +44,7 @@ csvFile <- function(input, output, session, stringsAsFactors) {
 
   # We can run observers in here if we want to
   observe({
-    msg <- sprintf("File %s was uploaded", userFile()$name)
+    msg <- sprintf("Dosya %s yuklendi", userFile()$name)
     cat(msg, "\n")
   })
 
