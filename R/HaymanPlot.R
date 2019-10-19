@@ -2,11 +2,11 @@
 #'
 #' @description Bu paket ıslah denemelerinin analizi için geliştirilmiştir.
 #'
-#' @param VOLO <- HaymanR$VOLO
-#' @param In.Value <- HaymanR$In.Value
-#' @param a <- HaymanR$a
-#' @param b <- HaymanR$b
-#' @param Wr.Vr <- HaymanR$Wr.Vr.Table
+#' @param VOLO <- op13()$VOLO
+#' @param In.Value <- op13()$In.Value
+#' @param a <- op13()$a
+#' @param b <- op13()$b
+#' @param Wr.Vr <- op()$Wr.Vr.Table
 #' @param data A \code{data.frame}
 #' @return NULL
 #'

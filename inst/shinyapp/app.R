@@ -1,11 +1,4 @@
 #
-# This is a Shiny web application. You can run the application by clicking
-# the 'Run App' button above.
-#
-# Find out more about building applications with Shiny here:
-#
-#    http://shiny.rstudio.com/
-#
 library(shiny)
 library(BAFR)
 
@@ -15,13 +8,7 @@ csvFileInput <- function(id, label = "CSV file") {
   ns <- NS(id)
 
   tagList(
-    fileInput(ns("file"), label),
-    checkboxInput(ns("heading"), "Baslik Var"),
-    selectInput(ns("quote"), "İsim Belirteci", c(
-      "Yok" = "",
-      "Cift Tirnak" = "\"",
-      "Tek Tirnak" = "'"
-    ))
+    fileInput(ns("file"), label)
   )
 }
 
@@ -36,10 +23,8 @@ csvFile <- function(input, output, session, stringsAsFactors) {
 
   # The user's data, parsed into a data frame
   dataframe <- reactive({
-    read.csv(userFile()$datapath,
-             header = input$heading,
-             quote = input$quote,
-             stringsAsFactors = stringsAsFactors)
+    read.table(userFile()$datapath,
+             header = TRUE)
   })
 
   # We can run observers in here if we want to
@@ -67,8 +52,8 @@ ui <- fluidPage(    # Application title
              tabPanel("Hakkinda",
                       sidebarLayout(
                         sidebarPanel(
-                          h2("İndirme"),
-                          p("BAFR uygulaması GitHub serveri üzerinden indirilebilir bir pakete sahiptir:"),
+                          h2("Indirme"),
+                          p("BAFR uygulamasi GitHub serveri Uzerinden indirilebilir bir pakete sahiptir:"),
                           code('devtools::install_github("fkahriman/BAFR")'),
                           br(),
                           br(),
@@ -82,24 +67,24 @@ ui <- fluidPage(    # Application title
                         ),
                         mainPanel(
                           h1("BAFR Hakkında"),
-                          p("BAFR yazılımı Shiny paketi kullanılarak RStudio platformunda geliştirilmiş bir uygulamadır."),
+                          p("BAFR yazılımı Shiny paketi kullanilarak RStudio platformunda gelistirilmis bir uygulamadır."),
                           br(),
-                          p("Uygulamanın taşınabilir versiyonunu indirmek ve daha detaylı bilgi için lütfen",
-                            a("BAF Elektronik Yazılım Tarım A.Ş. web sayfasını",
+                          p("Uygulamanin tasinabilir versiyonunu indirmek ve daha detaylı bilgi için lütfen",
+                            a("BAF Elektronik Yazilim Tarim A.S. web sayfasini",
                               href = "www.baf-eyt.com.tr"), "ziyaret ediniz."),
                           br(),
                           p("Referans=>BAFR:Bitki Islahi Denemelerinin Analizinde Kullanilabilecek Turkce Arayuzlu R Uygulamasi."),
-                          h2("Özellikler"),
-                          p("- Açık kaynak kodludur."),
-                          p("- Kod yazımı gerektirmez."),
-                          p("- Yaygın olarak kullanılan ıslah desenlerine ilişkin modülleri vardır."),
-                          p("- GNU lisanlı bir uygulamadır."),
-                          p("- Bilimsel çalışmalarda kullanılmak amacıyla geliştirilmiştir."),
-                          p("- BAFR uygulaması agricolae, DiallelAnaylysisR paketlerindeki kodları kullanmaktadır.")
+                          h2("Ozellikler"),
+                          p("- Acik kaynak kodludur."),
+                          p("- Kod yazmak gerektirmez."),
+                          p("- Yaygin olarak kullanilan islah desenlerine iliskin modelleri vardir."),
+                          p("- GNU lisanli bir uygulamadir."),
+                          p("- Bilimsel calismalarda kullanilmak amaciyla gelistirilmistir."),
+                          p("- BAFR uygulamasi agricolae, DiallelAnaylysisR paketlerindeki kodlardan yararlanmaktadir.")
                         )
                       )
              ),
-## SIRA DİZİ ANALİZİ(Line x Tester)----------------------------------------------------------------
+## SIRA DIZI ANALIZI (Line x Tester)----------------------------------------------------------------
 
              tabPanel("Line Tester Analizi",
                       sidebarLayout(
@@ -115,7 +100,7 @@ ui <- fluidPage(    # Application title
                           )
                         )
                       )),
-## NORTH CAROLİNA ANALİZLERİ----------------------------------------------------------------
+## NORTH CAROLINA ANALIZLERI----------------------------------------------------------------
 navbarMenu("North Carolina Analizleri",
            tabPanel("North Carolina-1",
                     sidebarLayout(
@@ -137,7 +122,7 @@ navbarMenu("North Carolina Analizleri",
 
                       # Sidebar panel for inputs ----
                       sidebarPanel(
-                        csvFileInput("file32", "User data (.csv format)"),
+                        csvFileInput("file3", "User data (.csv format)"),
                         actionButton("btn3", "Hesapla")),
 
                       mainPanel(
@@ -162,7 +147,7 @@ navbarMenu("North Carolina Analizleri",
                         )
                       )
                     ))),
-## GRİFFİNG DİALLEL ANALİZLERİ----------------------------------------------------------------
+## GRIFFING DIALLEL ANALIZLERI----------------------------------------------------------------
              navbarMenu("Griffing Diallel Analizleri",
                         tabPanel("Griffing Diallel Metot-1",
                                  sidebarLayout(
@@ -227,7 +212,7 @@ navbarMenu("North Carolina Analizleri",
                                      )
                                    )
                                  ))),
-## HAYMAN DİALLEL ANALİZLERİ----------------------------------------------------------------
+## HAYMAN DIALLEL ANALIZLERI----------------------------------------------------------------
              tabPanel("Hayman Diallel Analizler",
                       sidebarLayout(
 
@@ -256,8 +241,6 @@ server <- function(input, output,session) {
                          stringsAsFactors = FALSE)
     datafile3 <- callModule(csvFile, "file3",
                             stringsAsFactors = FALSE)
-    datafile32 <- callModule(csvFile, "file32",
-                            stringsAsFactors = FALSE)
     datafile4 <- callModule(csvFile, "file4",
                             stringsAsFactors = FALSE)
     datafile5 <- callModule(csvFile, "file5",
@@ -281,10 +264,6 @@ server <- function(input, output,session) {
 
     output$table3 <- renderTable({
       datafile3()
-    })
-
-    output$table32 <- renderTable({
-      datafile32()
     })
 
     output$table4 <- renderTable({
@@ -316,8 +295,8 @@ server <- function(input, output,session) {
     })
 
     op1 <- eventReactive(input$btn1, {
-      LinexTest(file1)
-      })
+      LinexTest(datafile1())
+    })
 
     output$Results1 <- renderPrint({
       op1()
@@ -328,7 +307,7 @@ server <- function(input, output,session) {
     })
 
     op2 <- eventReactive(input$btn2, {
-      NCM1(file2)
+      NCM1(datafile2())
     })
 
     output$Results2 <- renderPrint({
@@ -340,7 +319,7 @@ server <- function(input, output,session) {
   })
 
   op32 <- eventReactive(input$btn3, {
-    NCM2(file32)
+    NCM2(datafile3())
   })
 
    output$Results3 <- renderPrint({
@@ -352,7 +331,7 @@ server <- function(input, output,session) {
    })
 
    op4 <- eventReactive(input$btn4, {
-     NCM3(file4)
+     NCM3(datafile4())
    })
 
    output$Results4 <- renderPrint({
@@ -366,7 +345,7 @@ server <- function(input, output,session) {
    })
 
    op5 <- eventReactive(input$btn5, {
-     GriffingM1M1(file5)
+     GriffingM1M1(datafile5())
    })
 
    observeEvent(input$btn6, {
@@ -376,7 +355,7 @@ server <- function(input, output,session) {
    })
 
    op6 <- eventReactive(input$btn6, {
-     GriffingM1M2(file5)
+     GriffingM1M2(datafile5())
    })
 
    output$Results5 <- renderPrint({
@@ -393,7 +372,7 @@ server <- function(input, output,session) {
    })
 
    op7 <- eventReactive(input$btn7, {
-     GriffingM2M1(file5)
+     GriffingM2M1(datafile5())
    })
 
    observeEvent(input$btn8, {
@@ -403,7 +382,7 @@ server <- function(input, output,session) {
    })
 
    op8 <- eventReactive(input$btn7, {
-     GriffingM2M2(file5)
+     GriffingM2M2(datafile5())
    })
 
    output$Results6 <- renderPrint({
@@ -420,7 +399,7 @@ server <- function(input, output,session) {
    })
 
    op9 <- eventReactive(input$btn9, {
-     GriffingM3M1(file5)
+     GriffingM3M1(datafile5())
    })
 
    observeEvent(input$btn10, {
@@ -430,7 +409,7 @@ server <- function(input, output,session) {
    })
 
    op10 <- eventReactive(input$btn10, {
-     GriffingM3M2(file5)
+     GriffingM3M2(datafile5())
    })
 
    output$Results7 <- renderPrint({
@@ -447,7 +426,7 @@ server <- function(input, output,session) {
    })
 
    op11 <- eventReactive(input$btn11, {
-     GriffingM4M1(file5)
+     GriffingM4M1(datafile5())
    })
 
    observeEvent(input$btn12, {
@@ -457,7 +436,7 @@ server <- function(input, output,session) {
    })
 
    op12 <- eventReactive(input$btn12, {
-     GriffingM4M2(file5)
+     GriffingM4M2(datafile5())
    })
 
    output$Results8 <- renderPrint({
@@ -473,7 +452,7 @@ server <- function(input, output,session) {
    })
 
    op13 <- eventReactive(input$btn13, {
-     HaymanR(file9)
+     HaymanR(datafile9())
    })
 
    output$Results9 <- renderPrint({
@@ -485,7 +464,7 @@ server <- function(input, output,session) {
    })
 
    op14 <- eventReactive(input$btn14, {
-     HaymanPlot(file9)
+     HaymanPlot(op13())
    })
 
    output$plot9 <- renderPlot({
