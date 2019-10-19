@@ -465,10 +465,8 @@ server <- function(input, output,session) {
 
    op14 <- eventReactive(input$btn14, {
      HaymanPlot(op13())
-   })
 
-   output$plot9 <- renderPlot({
-     op14()
+   output$plot9 <- renderPlot(op14)
    })
 }
 

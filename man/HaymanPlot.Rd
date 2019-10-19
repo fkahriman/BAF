@@ -7,15 +7,15 @@
 HaymanPlot(data.frame)
 }
 \arguments{
-\item{VOLO}{<- HaymanR$VOLO}
+\item{VOLO}{<- op13()$VOLO}
 
-\item{In.Value}{<- HaymanR$In.Value}
+\item{In.Value}{<- op13()$In.Value}
 
-\item{a}{<- HaymanR$a}
+\item{a}{<- op13()$a}
 
-\item{b}{<- HaymanR$b}
+\item{b}{<- op13()$b}
 
-\item{Wr.Vr}{<- HaymanR$Wr.Vr.Table}
+\item{Wr.Vr}{<- op()$Wr.Vr.Table}
 
 \item{data}{A \code{data.frame}}
 }

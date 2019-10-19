@@ -6,7 +6,7 @@
 #' @param In.Value <- op13()$In.Value
 #' @param a <- op13()$a
 #' @param b <- op13()$b
-#' @param Wr.Vr <- op()$Wr.Vr.Table
+#' @param Wr.Vr <- op13()$Wr.Vr.Table
 #' @param data A \code{data.frame}
 #' @return NULL
 #'
@@ -23,7 +23,13 @@
 #'
 HaymanPlot <- function(data.frame){
 require(ggplot2)
-HaymanPlot <- ggplot2::ggplot(data=data.frame(x=c(0, max(In.Value, Wr.Vr$Vr, Wr.Vr$Wr, Wr.Vr$Wrei))), aes(x)) +
+data <- data.frame(data=op13)
+VOLO <- data$VOLO
+In.Value <- data$In.Value
+a <- data$a
+b <- data$b
+Wr.Vr <- data$Wr.Vr.Table
+  HaymanPlot <- ggplot2::ggplot(data=data.frame(x=c(0, max(In.Value, Wr.Vr$Vr, Wr.Vr$Wr, Wr.Vr$Wrei))), aes(x)) +
   stat_function(fun=function(x) {sqrt(x*VOLO)}, color="blue") +
   geom_hline(yintercept = 0) +
   geom_vline(xintercept = 0) +
