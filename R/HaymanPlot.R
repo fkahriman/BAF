@@ -2,11 +2,11 @@
 #'
 #' @description Bu paket ıslah denemelerinin analizi için geliştirilmiştir.
 #'
-#' @param VOLO <- op13()$VOLO
-#' @param In.Value <- op13()$In.Value
-#' @param a <- op13()$a
-#' @param b <- op13()$b
-#' @param Wr.Vr <- op13()$Wr.Vr.Table
+#' @param VOLO <- HaymanR$VOLO
+#' @param In.Value <- HaymanR$In.Value
+#' @param a <- HaymanR$a
+#' @param b <- HaymanR$b
+#' @param Wr.Vr <- HaymanR$Wr.Vr.Table
 #' @param data A \code{data.frame}
 #' @return NULL
 #'
@@ -23,12 +23,12 @@
 #'
 HaymanPlot <- function(data.frame){
 require(ggplot2)
-data <- data.frame(data=op13)
-VOLO <- data$VOLO
-In.Value <- data$In.Value
-a <- data$a
-b <- data$b
-Wr.Vr <- data$Wr.Vr.Table
+HaymanR <- data.frame(HaymanR())
+VOLO <- HaymanR$VOLO
+In.Value <-HaymanR$In.Value
+a <- HaymanR$a
+b <- HaymanR$b
+Wr.Vr <- HaymanR$Wr.Vr.Table
   HaymanPlot <- ggplot2::ggplot(data=data.frame(x=c(0, max(In.Value, Wr.Vr$Vr, Wr.Vr$Wr, Wr.Vr$Wrei))), aes(x)) +
   stat_function(fun=function(x) {sqrt(x*VOLO)}, color="blue") +
   geom_hline(yintercept = 0) +
